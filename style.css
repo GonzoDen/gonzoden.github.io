@@ -2,3 +2,12 @@ header{
     background:beige;
     padding: 1rem;
 }
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+}
