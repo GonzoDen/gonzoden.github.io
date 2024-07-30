@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title> Deniz Nazarova</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deniz Nazarova</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/img/icons/" type="image/x-icon">
 </head>
-
 <body>
     <header>
-        Deniz Nazarova
+        <div class="header-content">
+            <img src="img/photos/cover.JPG" alt="Background Image" class="background-image">
+            <div class="header-text">
+                <h1>Deniz Nazarova</h1>
+                <p>PhD Student @ UW CSE</p>
+            </div>
+        </div>
         <nav>
             <ul>
-                <li>Publications</li>
-                <li>CV</li>
-                <li>Miscellaneous</li>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="files/cv.pdf" target="_blank">CV</a></li>
             </ul>
         </nav>
     </header>
+    <main>
+        <section id="bio">
+            <div class="bio-content">
+                <img src="img/photos/bio_photo.jpg" alt="Your Name" class="profile-pic">
+                <div class="bio-text">
+                    <h2>Bio</h2>
+                    <p>Hi! I am Deniz, a first year PhD student at Paul G. Allen School of Computer Science, University of Washington (UW). I am advised by <a href="https://homes.cs.washington.edu/~yuliats/">Prof. Yulia Tsvetkov</a> and  <a href="https://homes.cs.washington.edu/~althoff/">Prof. Tim Althoff</a>. </p>
+                        
+                    <p>My research interests are AI in therapy, NLP, Multilingual NLP, AI Bias, Neuro-Symbolic AI, HCP, HCI, Socially Responsible AI </p>
+                        
+                    <p> Before my PhD, I spent a year assisting to mental health startups as an AI engineer while also working with UNDP Kyrgyzstan and UN Women ECA as a data analyst and engineer. I completed a double major in Software Engineering and Psychology at the American University Of Central Asia. </p>
+                        
+                </div>
+            </div>
+        </section>
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul id="publications-list">
+                <!-- JavaScript will populate this list -->
+            </ul>
+        </section>
+        <section id="news">
+            <h2>News</h2>
+            <ul id="news-list">
+                <!-- JavaScript will populate this list -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Last update: <span id="last-update">July 30, 2024</span></p>
+        <div class="social-icons">
+            <a href="mailto:denizn@uw.edu"><img src="img/icons/gmail.png" alt="Gmail"></a>
+            <a href="https://www.linkedin.com/in/deniz-nazarova" target="_blank"><img src="img/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://scholar.google.com/citations?user=ZxQO6oMAAAAJ&hl=ru&citsig=ANk4lt74pNlV3aThHTTZBvYEyqL3" target="_blank"><img src="img/icons/scholar.png" alt="Google Scholar"></a>
+            <a href="https://github.com/gonzoden" target="_blank"><img src="img/icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
-
 </html>
