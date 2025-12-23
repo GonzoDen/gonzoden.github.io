@@ -11,6 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const THEME_KEY = 'site-theme-mode';
     const toggleButton = document.getElementById('theme-toggle');
 
+    const updateTextContent = (isNormal) => {
+        // Update section titles
+        const bioTitle = document.querySelector('#bio .section-title span');
+        const pubTitle = document.querySelector('#publications .section-title span');
+        const newsTitle = document.querySelector('#news .section-title span');
+        const blinkText = document.querySelector('.blink');
+        
+        if (bioTitle) {
+            bioTitle.textContent = isNormal ? 'About' : '~*~ Bio ~*~';
+        }
+        if (pubTitle) {
+            pubTitle.textContent = isNormal ? 'Publications' : 'Publications Hall of Fame';
+        }
+        if (newsTitle) {
+            newsTitle.textContent = isNormal ? 'News' : 'News Flash';
+        }
+        if (blinkText) {
+            blinkText.textContent = isNormal ? '' : '~*~ Geocities Spirit Award ~*~';
+            blinkText.style.display = isNormal ? 'none' : 'block';
+        }
+    };
+
     const applyTheme = (mode) => {
         const isNormal = mode === 'normal';
         document.body.classList.toggle('theme-normal', isNormal);
@@ -22,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         document.documentElement.setAttribute('data-theme', mode);
         localStorage.setItem(THEME_KEY, mode);
+        updateTextContent(isNormal);
     };
 
     const initBouncer = () => {
