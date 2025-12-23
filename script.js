@@ -60,11 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (toggleButton) {
         const stored = localStorage.getItem(THEME_KEY);
+        // Default to cursed; only stay normal if explicitly stored
         applyTheme(stored === 'normal' ? 'normal' : 'cursed');
         toggleButton.addEventListener('click', () => {
             const next = document.body.classList.contains('theme-normal') ? 'cursed' : 'normal';
             applyTheme(next);
         });
+    } else {
+        // Safety: ensure cursed baseline if toggle missing
+        applyTheme('cursed');
     }
 
     initBouncer();

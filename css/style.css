@@ -25,14 +25,27 @@ body.cursed .marquee-top {
     padding: 6px 0;
     border-bottom: 4px double #ffff00;
     text-shadow: 0 0 8px #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 6px;
+}
+
+body.cursed .marquee-line {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: marqueeScroll 12s linear infinite;
 }
 
 body.cursed header {
     position: relative;
+    z-index: 3;
     text-align: center;
     color: white;
     border-bottom: 6px ridge #00ff90;
     box-shadow: 0 0 25px #ff00ff;
+    padding-top: 10px;
 }
 
 body.cursed .header-container {
@@ -319,6 +332,11 @@ body.cursed .social-icons img {
     50% { transform: translateY(-6px) rotate(1deg); }
 }
 
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
 .theme-toggle {
     position: absolute;
     right: 12px;
@@ -359,7 +377,10 @@ body.theme-normal header {
     color: #0f172a;
     border: none;
     box-shadow: none;
-    background: #e5e7eb;
+    background: linear-gradient(135deg, #e5e7eb, #eef2ff);
+    padding: 20px 0 16px;
+    position: relative;
+    z-index: 3;
 }
 
 body.theme-normal .header-content {
@@ -379,7 +400,7 @@ body.theme-normal .header-text {
     color: #0f172a;
     text-shadow: none;
     animation: none;
-    padding: 1.25em 0;
+    padding: 1.25em 0 0.5em;
 }
 
 body.theme-normal .blink {
@@ -403,14 +424,15 @@ body.theme-normal nav {
     color: #f9fafb;
     border: none;
     animation: none;
+    padding: 10px 0;
 }
 
 body.theme-normal nav ul li {
     background: transparent;
     border: none;
     box-shadow: none;
-    margin: 0 0.5em;
-    padding: 0.1em 0.2em;
+    margin: 0 0.6em;
+    padding: 0.25em 0.35em;
 }
 
 body.theme-normal nav ul li a {
@@ -428,8 +450,10 @@ body.theme-normal nav ul li:hover {
 body.theme-normal .geocities-box {
     border: 1px solid #e5e7eb;
     background: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     animation: none;
+    padding: 28px;
+    border-radius: 16px;
 }
 
 body.theme-normal .section-title {
@@ -437,12 +461,17 @@ body.theme-normal .section-title {
     background: transparent;
     color: #0f172a;
     text-shadow: none;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
 }
 
 body.theme-normal .bio-content {
     border: 1px solid #e5e7eb;
     background: #f9fafb;
+    padding: 16px;
+    border-radius: 14px;
+    gap: 18px;
 }
 
 body.theme-normal .profile-pic {
@@ -472,12 +501,15 @@ body.theme-normal #publications-list li,
 body.theme-normal #news-list li {
     background: #ffffff;
     border: 1px solid #e5e7eb;
-    box-shadow: none;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    border-radius: 12px;
+    padding: 14px;
 }
 
 body.theme-normal #publications-list img,
 body.theme-normal #news-list img {
     border: 2px solid #e5e7eb;
+    border-radius: 10px;
 }
 
 body.theme-normal #publications-list a,
@@ -496,6 +528,7 @@ body.theme-normal footer {
     color: #f9fafb;
     border: none;
     box-shadow: none;
+    padding: 18px 0;
 }
 
 /* Bouncing screensaver element */
