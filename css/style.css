@@ -12,6 +12,10 @@ body.cursed {
     cursor: default;
 }
 
+body.cursed * {
+    font-family: "Comic Sans MS", "Papyrus", cursive, sans-serif !important;
+}
+
 body.cursed .marquee-top {
     background: repeating-linear-gradient(
         45deg,
@@ -78,6 +82,7 @@ body.cursed .background-image {
     object-fit: cover;
     display: block;
     filter: hue-rotate(18deg) saturate(1.3);
+    max-width: 100%;
 }
 
 body.cursed .header-text {
@@ -152,6 +157,8 @@ body.cursed nav ul li:hover {
 
 main {
     padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 body.cursed .geocities-box {
@@ -344,7 +351,7 @@ body.cursed .social-icons img {
     z-index: 5;
     padding: 0.45em 0.9em;
     font-weight: 800;
-    font-family: inherit;
+    font-family: "Comic Sans MS", "Papyrus", cursive, sans-serif;
     border: 3px outset #ffff00;
     background: linear-gradient(135deg, #00ffff, #ff00ff);
     color: #000;
@@ -394,6 +401,7 @@ body.theme-normal .background-image {
     width: 100%;
     object-fit: cover;
     display: block;
+    max-width: 100%;
 }
 
 body.theme-normal .header-text {
@@ -641,28 +649,218 @@ body.theme-normal footer {
     padding: 18px 0;
 }
 
-/* Bouncing screensaver element */
-.bouncer {
-    position: fixed;
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
-    display: grid;
-    place-items: center;
-    font-weight: 900;
-    pointer-events: none;
-    z-index: 20;
-    transition: filter 0.2s ease;
+body.theme-normal .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
 }
 
-body.cursed .bouncer {
-    background: radial-gradient(circle, #fffb00 0%, #ff00ff 70%);
-    color: #000;
-    box-shadow: 0 0 18px #ff00ff, 0 0 28px #00ffff;
+body.theme-normal .social-icons img {
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-body.theme-normal .bouncer {
-    background: #111827;
-    color: #f9fafb;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+body.theme-normal .social-icons a:hover img {
+    opacity: 1;
+    transform: scale(1.1);
 }
+
+/* Responsive Design - Mobile First */
+@media (max-width: 768px) {
+    /* Base responsive adjustments */
+    body.cursed .marquee-top {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
+    
+    body.cursed .header-content {
+        height: 25vh;
+    }
+    
+    body.cursed .header-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    body.cursed .header-text p {
+        font-size: 1rem;
+    }
+    
+    body.cursed nav ul li {
+        margin: 0 0.4em;
+        padding: 0.15em 0.3em;
+        font-size: 0.85rem;
+    }
+    
+    main {
+        padding: 1em;
+    }
+    
+    body.cursed .geocities-box {
+        padding: 1em;
+    }
+    
+    body.cursed .bio-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    body.cursed .profile-pic {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 1em;
+    }
+    
+    body.cursed #publications-list li,
+    body.cursed #news-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    body.cursed #publications-list img,
+    body.cursed #news-list img {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 0 1em 0;
+    }
+    
+    /* Normal theme mobile adjustments */
+    body.theme-normal .header-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    body.theme-normal .header-text p {
+        font-size: 0.95rem;
+    }
+    
+    body.theme-normal .background-image {
+        max-height: 180px;
+    }
+    
+    body.theme-normal nav ul {
+        flex-wrap: wrap;
+        gap: 0.5em;
+        padding: 0.5em;
+    }
+    
+    body.theme-normal nav ul li {
+        padding: 0.4em 0.8em;
+        font-size: 0.9rem;
+    }
+    
+    body.theme-normal .geocities-box {
+        padding: 1.5em;
+        border-radius: 12px;
+    }
+    
+    body.theme-normal .bio-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5em;
+    }
+    
+    body.theme-normal .profile-pic {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1.5em;
+    }
+    
+    body.theme-normal #publications-list li,
+    body.theme-normal #news-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5em;
+    }
+    
+    body.theme-normal #publications-list img,
+    body.theme-normal #news-list img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 0 1em 0;
+    }
+    
+    body.theme-normal .section-title {
+        font-size: 1.1rem;
+    }
+    
+    body.theme-normal .theme-toggle {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        padding: 0.4em 0.8em;
+        font-size: 0.85rem;
+        z-index: 1000;
+    }
+    
+    body.cursed .theme-toggle {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        padding: 0.35em 0.7em;
+        font-size: 0.75rem;
+        z-index: 1000;
+    }
+    
+    footer {
+        padding: 1em 0.5em;
+    }
+    
+    .social-icons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.cursed .header-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    body.cursed .header-text p {
+        font-size: 0.9rem;
+    }
+    
+    body.cursed nav ul li {
+        margin: 0 0.2em;
+        padding: 0.1em 0.2em;
+        font-size: 0.75rem;
+    }
+    
+    body.theme-normal .header-text h1 {
+        font-size: 1.3rem;
+    }
+    
+    body.theme-normal .header-text p {
+        font-size: 0.9rem;
+    }
+    
+    body.theme-normal nav ul li {
+        padding: 0.3em 0.6em;
+        font-size: 0.85rem;
+    }
+    
+    body.theme-normal .geocities-box {
+        padding: 1em;
+    }
+    
+    body.theme-normal .bio-content {
+        padding: 1em;
+    }
+    
+    body.theme-normal .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    
+    main {
+        padding: 0.75em;
+    }
+}
+
