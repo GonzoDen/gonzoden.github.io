@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const news = [
         { title: 'I gave an oral presentation of my work at the Annual Research Showcase at UW!', description: '10-29-25'},
-        { title: 'Accepted to UW CSE as a PhD student', link: 'https://www.linkedin.com/feed/update/urn:li:activity:7218878692725276672/', image: 'path_to_news_image1.jpg', description: '06-21-24' },
+        { title: 'Invited as a Data Enginer to the UN Women research on femicide', link: 'https://www.linkedin.com/feed/update/urn:li:activity:7218878692725276672/', image: 'path_to_news_image1.jpg', description: '06-21-24' },
+        { title: 'Accepted to UW CSE as a PhD student', link: 'https://www.linkedin.com/feed/update/urn:li:activity:7218878692725276672/', image: 'path_to_news_image1.jpg', description: '02-08-24' },
         { title: 'Admitted to EPAM Systems as a Data Engineering Intern', link: 'https://www.linkedin.com/posts/deniz-nazarova_confluent-fundamentals-accreditation-deniz-activity-7196168337570070528-EWuu?utm_source=share&utm_medium=member_desktop', image: 'path_to_news_image2.jpg', description: '02-06-24' },
     ];
 
@@ -76,24 +77,34 @@ document.addEventListener('DOMContentLoaded', () => {
     publications.forEach(publication => {
         const listItem = document.createElement('li');
         
-        const image = document.createElement('img');
-        image.src = publication.image;
-        image.alt = publication.title;
+        if (publication.image) {
+            const image = document.createElement('img');
+            image.src = publication.image;
+            image.alt = publication.title;
+            listItem.appendChild(image);
+        }
 
         const details = document.createElement('div');
         details.className = 'details';
 
-        const link = document.createElement('a');
-        link.href = publication.link;
-        link.textContent = publication.title;
+        if (publication.link) {
+            const link = document.createElement('a');
+            link.href = publication.link;
+            link.textContent = publication.title;
+            details.appendChild(link);
+        } else {
+            const title = document.createElement('strong');
+            title.textContent = publication.title;
+            details.appendChild(title);
+        }
 
-        const description = document.createElement('p');
-        description.className = 'description';
-        description.textContent = publication.description;
+        if (publication.description) {
+            const description = document.createElement('p');
+            description.className = 'description';
+            description.textContent = publication.description;
+            details.appendChild(description);
+        }
 
-        details.appendChild(link);
-        details.appendChild(description);
-        listItem.appendChild(image);
         listItem.appendChild(details);
         publicationsList.appendChild(listItem);
     });
@@ -105,23 +116,27 @@ document.addEventListener('DOMContentLoaded', () => {
     news.forEach(item => {
         const listItem = document.createElement('li');
         
-        //const image = document.createElement('img');
-        //image.src = item.image;
-        //image.alt = item.title;
-
         const details = document.createElement('div');
         details.className = 'details';
 
-        const link = document.createElement('a');
-        link.href = item.link;
-        link.textContent = item.title;
+        if (item.link) {
+            const link = document.createElement('a');
+            link.href = item.link;
+            link.textContent = item.title;
+            details.appendChild(link);
+        } else {
+            const title = document.createElement('strong');
+            title.textContent = item.title;
+            details.appendChild(title);
+        }
 
-        const description = document.createElement('p');
-        description.className = 'description';
-        description.textContent = item.description;
+        if (item.description) {
+            const description = document.createElement('p');
+            description.className = 'description';
+            description.textContent = item.description;
+            details.appendChild(description);
+        }
 
-        details.appendChild(link);
-        details.appendChild(description);
         listItem.appendChild(details);
         newsList.appendChild(listItem);
     });
