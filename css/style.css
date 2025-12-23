@@ -1,178 +1,525 @@
-body {
-    font-family: Arial, sans-serif;
+body.cursed {
+    font-family: "Comic Sans MS", "Papyrus", cursive, sans-serif;
     margin: 0;
     padding: 0;
+    color: #fffef6;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.2), transparent 25%),
+        radial-gradient(circle at 90% 40%, rgba(0, 255, 255, 0.2), transparent 25%),
+        linear-gradient(135deg, #0d002b 0%, #2c0061 50%, #000814 100%);
+    background-size: 300% 300%;
+    animation: raveBg 18s ease-in-out infinite;
+    cursor: default;
 }
 
-header {
+body.cursed .marquee-top {
+    background: repeating-linear-gradient(
+        45deg,
+        #ff00ff,
+        #ff00ff 12px,
+        #00ffff 12px,
+        #00ffff 24px
+    );
+    color: #000;
+    font-weight: bold;
+    padding: 6px 0;
+    border-bottom: 4px double #ffff00;
+    text-shadow: 0 0 8px #fff;
+}
+
+body.cursed header {
     position: relative;
     text-align: center;
     color: white;
+    border-bottom: 6px ridge #00ff90;
+    box-shadow: 0 0 25px #ff00ff;
 }
 
-.header-container {
-    max-width: 1200px; /* Set the maximum width as needed */
-    margin: 0 auto; /* Center the header */
+body.cursed .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.header-content {
+body.cursed .header-content {
     position: relative;
-    height: 20vh; /* Adjust the height as needed */
+    height: 32vh;
     overflow: hidden;
     margin: 0 auto;
     width: 100%;
+    filter: saturate(1.4) contrast(1.2);
 }
 
-.header-link {
+body.cursed .header-link {
     display: block;
     height: 100%;
 }
 
-.header-image {
+body.cursed .header-image {
     position: relative;
     height: 100%;
 }
 
-.background-image {
+body.cursed .background-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    filter: hue-rotate(18deg) saturate(1.3);
 }
 
-
-.header-text {
+body.cursed .header-text {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(-2deg);
     text-align: center;
-    color: white;
-    text-shadow: 
-        0 0 10px rgba(9, 130, 211, 0.8), /* Stronger shadow */
-        0 0 20px rgba(9, 130, 211, 0.8), /* Additional shadow for better contrast */
-        0 0 30px rgba(0, 0, 0, 0.4); /* Further shadow for a more pronounced effect */
+    color: #fff8c4;
+    text-shadow:
+        0 0 8px #ff00ff,
+        0 0 12px #00ffff,
+        2px 2px 0 #000;
+    letter-spacing: 1px;
+    animation: wiggle 3s ease-in-out infinite;
 }
 
-
-nav {
-    background-color: #5272a1;
-    color: white;
-    text-align: center;
-    padding: 0.5em 0;
+body.cursed .header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
 }
 
-nav ul {
+body.cursed .header-text p {
+    margin: 0.4rem 0;
+    font-size: 1.3rem;
+}
+
+body.cursed .blink {
+    font-weight: bold;
+    color: #ffff00;
+    animation: blink 0.9s steps(2, start) infinite;
+    letter-spacing: 2px;
+}
+
+body.cursed nav {
+    background: linear-gradient(90deg, #ff009d, #fffb00, #00f0ff, #ff009d);
+    background-size: 300% 100%;
+    animation: navShift 10s linear infinite;
+    color: #000;
+    text-align: center;
+    padding: 0.5em 0.2em;
+    border-top: 4px groove #00ffea;
+    border-bottom: 4px groove #00ffea;
+}
+
+body.cursed nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-nav ul li {
-    display: inline;
+body.cursed nav ul li {
+    display: inline-block;
     margin: 0 1em;
+    padding: 0.2em 0.5em;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px outset #ffe600;
+    box-shadow: 0 0 8px #000;
 }
 
-nav ul li a {
-    color: white;
+body.cursed nav ul li a {
+    color: #000;
     text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #fff;
+}
+
+body.cursed nav ul li:hover {
+    transform: rotate(-2deg) scale(1.05);
 }
 
 main {
     padding: 2em;
 }
 
-main section {
-    margin-bottom: 2em;
+body.cursed .geocities-box {
+    border: 6px double #ff00ff;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(0, 255, 255, 0.12));
+    box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.3), 0 0 30px #00f0ff;
+    padding: 1.5em;
+    animation: shimmer 5s ease-in-out infinite;
 }
 
-.bio-content {
+main section {
+    margin-bottom: 2.5em;
+}
+
+body.cursed .section-title {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fffb00;
+    text-shadow: 0 0 12px #ff00ff, 2px 2px #000;
+    padding: 0.4em 0;
+    border: 4px ridge #00ffff;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.15) 0,
+        rgba(255, 255, 255, 0.15) 10px,
+        rgba(0, 0, 0, 0.2) 10px,
+        rgba(0, 0, 0, 0.2) 20px
+    );
+}
+
+body.cursed .bio-content {
     display: flex;
     align-items: center;
+    gap: 1.5em;
+    padding: 1em;
+    border: 3px dashed #ffff00;
+    background: rgba(0, 0, 0, 0.35);
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
+body.cursed .profile-pic {
+    width: 170px;
+    height: 170px;
+    border-radius: 12px;
+    margin-right: 0;
+    border: 5px groove #00ffea;
+    box-shadow: 0 0 12px #ff00ff, 0 0 22px #00ffff;
+    animation: bob 4s ease-in-out infinite;
 }
 
-.bio-text {
+body.cursed .bio-text {
     flex: 1;
+    line-height: 1.6;
+    color: #fffcd7;
+    text-shadow: 1px 1px #000;
 }
 
 /* General link styles */
-a {
-    color: inherit; /* Inherit the color from the parent element */
-    text-decoration: none; /* Remove the underline */
+body.cursed a {
+    color: #00ffea;
+    text-decoration: underline;
 }
 
-/* Add hover effect if desired */
-a:hover {
-    color: #5272a1; /* Change to your preferred color on hover */
-    text-decoration: underline; /* Optional: add underline on hover */
+body.cursed a:hover {
+    color: #fffb00;
+    background: #ff00ff;
+    text-decoration: none;
+    box-shadow: 0 0 8px #fff;
 }
 
-/* Specific styles for bio links if needed */
-#bio a {
-    color: #5272a1; /* Your preferred color for links in bio section */
+body.cursed #bio a {
+    color: #fffb00;
 }
 
-#bio a:hover {
-    color: #8b00ff; /* Change to your preferred color on hover */
-}
-
-
-footer {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 1em 0;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
+body.cursed #bio a:hover {
+    color: #00ffea;
 }
 
 #publications-list, #news-list {
     list-style: none;
-    padding: 0;
+    padding: 0.5em;
+    margin: 0;
 }
 
-#publications-list li, #news-list li {
+body.cursed #publications-list li, body.cursed #news-list li {
     margin-bottom: 1em;
     display: flex;
     align-items: flex-start;
+    background: rgba(0, 0, 0, 0.4);
+    border: 3px groove #ff00ff;
+    padding: 0.8em;
+    box-shadow: 0 0 10px #00ffff;
 }
 
-#publications-list img, #news-list img {
-    width: 100px;
+body.cursed #publications-list img, body.cursed #news-list img {
+    width: 120px;
     height: auto;
     margin-right: 10px;
+    border: 3px solid #ffff00;
 }
 
-#publications-list a, #news-list a {
+body.cursed #publications-list a, body.cursed #news-list a {
     text-decoration: none;
     font-weight: bold;
-    color: #333;
+    color: #fffb00;
+    text-shadow: 1px 1px #000;
 }
 
-#publications-list a:hover, #news-list a:hover {
+body.cursed #publications-list a:hover, body.cursed #news-list a:hover {
     text-decoration: underline;
 }
 
-#publications-list .details, #news-list .details {
+body.cursed #publications-list .details, body.cursed #news-list .details {
     display: flex;
     flex-direction: column;
 }
 
-#publications-list .description, #news-list .description {
+body.cursed #publications-list .description, body.cursed #news-list .description {
     margin-top: 5px;
     font-style: italic;
-    color: #666;
+    color: #00ffea;
+}
+
+body.cursed footer {
+    background: repeating-linear-gradient(
+        -45deg,
+        #00ffff,
+        #00ffff 15px,
+        #ff00ff 15px,
+        #ff00ff 30px
+    );
+    text-align: center;
+    padding: 1.2em 0;
+    color: #000;
+    font-weight: bold;
+    border-top: 6px ridge #ffff00;
+    box-shadow: 0 -4px 18px #00f0ff;
+}
+
+body.cursed .social-icons img {
+    width: 36px;
+    height: 36px;
+    margin: 0 10px;
+    filter: drop-shadow(0 0 6px #fff);
 }
 
 #contact {
-    padding-bottom: 4em; /* Ensure there is enough space above the footer */
+    padding-bottom: 4em;
+}
+
+@keyframes raveBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes navShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-2deg); }
+    50% { transform: translate(-50%, -48%) rotate(2deg); }
+}
+
+@keyframes shimmer {
+    0% { box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 0 0 25px #00f0ff; }
+    50% { box-shadow: inset 0 0 35px rgba(255, 255, 255, 0.35), 0 0 45px #ff00ff; }
+    100% { box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 0 0 25px #00f0ff; }
+}
+
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.theme-toggle {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 5;
+    padding: 0.45em 0.9em;
+    font-weight: 800;
+    font-family: inherit;
+    border: 3px outset #ffff00;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    color: #000;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 12px #000;
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Normal accessible theme overrides */
+body.theme-normal {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #f9fafb;
+    color: #111827;
+    animation: none;
+    background-size: auto;
+}
+
+body.theme-normal * {
+    animation: none !important;
+}
+
+body.theme-normal .marquee-top { display: none; }
+
+body.theme-normal header {
+    color: #0f172a;
+    border: none;
+    box-shadow: none;
+    background: #e5e7eb;
+}
+
+body.theme-normal .header-content {
+    height: auto;
+    filter: none;
+}
+
+body.theme-normal .background-image {
+    filter: none;
+    max-height: 260px;
+    object-fit: cover;
+}
+
+body.theme-normal .header-text {
+    position: static;
+    transform: none;
+    color: #0f172a;
+    text-shadow: none;
+    animation: none;
+    padding: 1.25em 0;
+}
+
+body.theme-normal .blink {
+    color: #0f172a;
+    animation: none;
+}
+
+body.theme-normal .theme-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    border: 2px solid #1f2937;
+    background: #ffffff;
+    color: #111827;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    text-transform: none;
+}
+
+body.theme-normal nav {
+    background: #111827;
+    color: #f9fafb;
+    border: none;
+    animation: none;
+}
+
+body.theme-normal nav ul li {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0 0.5em;
+    padding: 0.1em 0.2em;
+}
+
+body.theme-normal nav ul li a {
+    color: #f9fafb;
+    text-shadow: none;
+    text-transform: none;
+    font-weight: 600;
+}
+
+body.theme-normal nav ul li:hover {
+    transform: none;
+    text-decoration: underline;
+}
+
+body.theme-normal .geocities-box {
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    animation: none;
+}
+
+body.theme-normal .section-title {
+    border: none;
+    background: transparent;
+    color: #0f172a;
+    text-shadow: none;
+    font-weight: 700;
+}
+
+body.theme-normal .bio-content {
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+body.theme-normal .profile-pic {
+    border-radius: 50%;
+    border: 4px solid #e5e7eb;
+    box-shadow: none;
+}
+
+body.theme-normal .bio-text {
+    color: #111827;
+    text-shadow: none;
+}
+
+body.theme-normal a {
+    color: #0b57d0;
+    text-decoration: underline;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.theme-normal a:hover {
+    color: #0b57d0;
+    text-decoration: underline;
+}
+
+body.theme-normal #publications-list li,
+body.theme-normal #news-list li {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: none;
+}
+
+body.theme-normal #publications-list img,
+body.theme-normal #news-list img {
+    border: 2px solid #e5e7eb;
+}
+
+body.theme-normal #publications-list a,
+body.theme-normal #news-list a {
+    color: #0b57d0;
+    text-shadow: none;
+}
+
+body.theme-normal #publications-list .description,
+body.theme-normal #news-list .description {
+    color: #374151;
+}
+
+body.theme-normal footer {
+    background: #111827;
+    color: #f9fafb;
+    border: none;
+    box-shadow: none;
+}
+
+/* Bouncing screensaver element */
+.bouncer {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 20;
+    transition: filter 0.2s ease;
+}
+
+body.cursed .bouncer {
+    background: radial-gradient(circle, #fffb00 0%, #ff00ff 70%);
+    color: #000;
+    box-shadow: 0 0 18px #ff00ff, 0 0 28px #00ffff;
+}
+
+body.theme-normal .bouncer {
+    background: #111827;
+    color: #f9fafb;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }

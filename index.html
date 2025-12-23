@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deniz Nazarova</title>
+    <title>Deniz Nazar</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/img/icons/" type="image/x-icon">
 </head>
-<body>
+<body class="cursed">
+    <div class="marquee-top">
+        <marquee scrollamount="12" behavior="alternate">✨ Welcome to Deniz's Corner of the Web ✨ — Best viewed in Netscape Navigator — Powered by dial-up vibes</marquee>
+    </div>
     <header>
         <div class="header-content">
             <img src="img/photos/cover.JPG" alt="Background Image" class="background-image">
             <div class="header-text">
-                <h1>Deniz Nazarova</h1>
+                <h1>Deniz Nazar (Nazarova)</h1>
                 <p>PhD Student @ UW CSE</p>
+                <div class="blink">~*~ Geocities Spirit Award ~*~</div>
             </div>
         </div>
+        <button id="theme-toggle" type="button" aria-pressed="false" class="theme-toggle">Switch to Normal</button>
         <nav>
             <ul>
                 <li><a href="#bio">Bio</a></li>
@@ -26,32 +31,35 @@
         </nav>
     </header>
     <main>
-        <section id="bio">
-            <div class="bio-content">
-                <img src="img/photos/bio_photo.jpg" alt="Your Name" class="profile-pic">
-                <div class="bio-text">
-                    <h2>Bio</h2>
-                    <p>Hi! I am Deniz, a first year PhD student at Paul G. Allen School of Computer Science, University of Washington (UW). I am advised by <a href="https://homes.cs.washington.edu/~yuliats/">Prof. Yulia Tsvetkov</a> and  <a href="https://homes.cs.washington.edu/~althoff/">Prof. Tim Althoff</a>. </p>
-                        
-                    <p>My research interests are AI in therapy, NLP, Multilingual NLP, AI Bias, Neuro-Symbolic AI, HCP, HCI, Socially Responsible AI </p>
-                        
-                    <p> Before my PhD, I spent a year assisting to mental health startups as an AI engineer while also working with UNDP Kyrgyzstan and UN Women ECA as a data analyst and engineer. I completed a double major in Software Engineering and Psychology at the American University Of Central Asia. </p>
-                        
+        <div class="geocities-box">
+            <section id="bio">
+                <div class="section-title"><span>~*~ Bio ~*~</span></div>
+                <div class="bio-content">
+                    <img src="img/photos/bio_photo.jpg" alt="Your Name" class="profile-pic">
+                    <div class="bio-text">
+                        <h2>Bio</h2>
+                        <p>Hi! I am Deniz, a first year PhD student at Paul G. Allen School of Computer Science, University of Washington (UW). I am advised by <a href="https://homes.cs.washington.edu/~yuliats/">Prof. Yulia Tsvetkov</a> and  <a href="https://homes.cs.washington.edu/~althoff/">Prof. Tim Althoff</a>. </p>
+                            
+                        <p>My research interests are AI in therapy, NLP, Multilingual NLP, AI Bias, Neuro-Symbolic AI, HCP, HCI, Socially Responsible AI </p>
+                            
+                        <p> Before my PhD, I spent a year assisting to mental health startups as an AI engineer while also working with UNDP Kyrgyzstan and UN Women ECA as a data analyst and engineer. I completed a double major in Software Engineering and Psychology at the American University Of Central Asia. </p>
+                            
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="publications">
-            <h2>Publications</h2>
-            <ul id="publications-list">
-                <!-- JavaScript will populate this list -->
-            </ul>
-        </section>
-        <section id="news">
-            <h2>News</h2>
-            <ul id="news-list">
-                <!-- JavaScript will populate this list -->
-            </ul>
-        </section>
+            </section>
+            <section id="publications">
+                <div class="section-title"><span>Publications Hall of Fame</span></div>
+                <ul id="publications-list">
+                    <!-- JavaScript will populate this list -->
+                </ul>
+            </section>
+            <section id="news">
+                <div class="section-title"><span>News Flash</span></div>
+                <ul id="news-list">
+                    <!-- JavaScript will populate this list -->
+                </ul>
+            </section>
+        </div>
     </main>
     <footer>
         <p>Last update: <span id="last-update">July 30, 2024</span></p>
@@ -62,6 +70,6 @@
             <a href="https://github.com/gonzoden" target="_blank"><img src="img/icons/github.png" alt="GitHub"></a>
         </div>
     </footer>
-    <script src="./script.js" type="module"></script>
+    <script src="./script.js" defer></script>
 </body>
 </html>
