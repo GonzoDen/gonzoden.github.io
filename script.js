@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const news = [
-        { title: 'I gave an oral presentation of my work at the Annual Research Showcase at UW!', description: '10-29-25'},
+        { title: 'I gave an oral presentation of my work at the Annual Research Showcase at UW!', link: 'https://www.linkedin.com/feed/update/urn:li:activity:7218878692725276672/', image: 'path_to_news_image1.jpg', description: '10-29-25'},
         { title: 'Invited as a Data Enginer to the UN Women research on femicide', link: 'https://www.linkedin.com/feed/update/urn:li:activity:7218878692725276672/', image: 'path_to_news_image1.jpg', description: '06-21-24' },
         { title: 'Accepted to UW CSE as a PhD student', link: 'https://www.linkedin.com/feed/update/urn:li:activity:7218878692725276672/', image: 'path_to_news_image1.jpg', description: '02-08-24' },
         { title: 'Admitted to EPAM Systems as a Data Engineering Intern', link: 'https://www.linkedin.com/posts/deniz-nazarova_confluent-fundamentals-accreditation-deniz-activity-7196168337570070528-EWuu?utm_source=share&utm_medium=member_desktop', image: 'path_to_news_image2.jpg', description: '02-06-24' },
