@@ -658,11 +658,22 @@ body.theme-normal .social-icons {
 }
 
 body.theme-normal .social-icons img {
-    width: 28px;
-    height: 28px;
-    margin: 0;
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     opacity: 0.9;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    object-fit: contain;
+    display: block;
+}
+
+body.theme-normal .social-icons a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
 }
 
 body.theme-normal .social-icons a:hover img {
